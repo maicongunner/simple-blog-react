@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Objetivo
+Você deve desenvolver uma aplicação web que funcione como uma plataforma
+simplificada de blog pessoal. Essa aplicação deve obter informações como autores,
+publicações e metadados através de APIs HTTP e exibir as informações relevantes no
+browser do usuário.
 
-In the project directory, you can run:
 
-### `yarn start`
+## Funcionalidades
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As funcionalidades esperadas da sua aplicação são listadas abaixo.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Lista de publicações: a aplicação deve buscar um conjunto de publicações e
+metadados através de uma API HTTP. Cada publicação deve ser exibida no browser
+em conjunto com as seguintes informações: título, corpo da publicação, nome do
+autor e data de publicação.
 
-### `yarn test`
+- Sumário de publicações: o usuário deve ter acesso a uma lista com os títulos das
+publicações mais recentes.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Filtro por autor: deve ser possível ao usuário filtrar as publicações disponíveis, de
+forma que apenas sejam visíveis as publicações de autores selecionados no filtro.
 
-### `yarn build`
+- Ordenar publicações: a aplicação deve permitir selecionar a ordem de exibição das
+publicações (crescente ou decrescente), de acordo com a data em que a mesma foi
+publicada.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Para instalar o projeto
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Digite o comando 'npm install'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Para executar o projeto
 
-### `yarn eject`
+Digite o comando 'npm start'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Para gerar a buid do projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Digite o comando 'npm run build'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
