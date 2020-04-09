@@ -10,7 +10,7 @@ import Loading from '../Loading';
 export default function PostList() {
 
   const [ posts, setPosts ] = useState([]);
-  const [ authors, setAuthors ] = useState([]); 
+  const [ authors, setAuthors ] = useState([]);
   const [ loading, setLoading ] = useState(false);
   const [ order, setOrder ] = useState('');
   const [ author, setAuthor ] = useState('');
@@ -20,11 +20,11 @@ export default function PostList() {
     async function loadPosts() {
       setLoading(true);
       try {
-        const response = await api.get('/5be5e3fa2f000082000fc3f8');      
+        const response = await api.get('/5be5e3fa2f000082000fc3f8');
         setPosts(response.data);
       } catch (error) {
         toast.error(`Error loading data posts [${error.message}]`);
-      }       
+      }
       setLoading(false);
     }
     loadPosts();
@@ -35,25 +35,25 @@ export default function PostList() {
     setLoading(true);
     try {
       const responseAuthors = await api.get('/5be5e3ae2f00005b000fc3f6');
-      setAuthors(responseAuthors.data); 
+      setAuthors(responseAuthors.data);
     } catch (error) {
       toast.error(`Error loading data authors [${error.message}]`);
-    }    
+    }
     setLoading(false);
   }
 
   function formatDate(date) {
     if (date) {
-      const datePost = new Date(date); 
-      return (((datePost.getMonth()+1) < 10) ? '0'+(datePost.getMonth()+1) : (datePost.getMonth()+1)) + '-' + ((datePost.getDate() < 10) ? '0'+datePost.getDate() : datePost.getDate()) + '-' + datePost.getFullYear(); 
-    } else return '';   
+      const datePost = new Date(date);
+      return (((datePost.getMonth()+1) < 10) ? '0'+(datePost.getMonth()+1) : (datePost.getMonth()+1)) + '-' + ((datePost.getDate() < 10) ? '0'+datePost.getDate() : datePost.getDate()) + '-' + datePost.getFullYear();
+    } else return '';
   }
 
   function formatUrlPost(date) {
     if (date) {
-      const datePost = new Date(date); 
+      const datePost = new Date(date);
       return (((datePost.getMonth()+1) < 10) ? '/'+(datePost.getMonth()+1) : (datePost.getMonth()+1)) + '/' + ((datePost.getDate() < 10) ? '0'+datePost.getDate() : datePost.getDate()) + '/' + datePost.getFullYear();
-    } else return '';   
+    } else return '';
   }
 
   function formatSlugPost(slug) {
@@ -62,9 +62,9 @@ export default function PostList() {
     } else return '';
   }
 
-  async function filterPostsToAuthor(authorIdSelected) {    
+  async function filterPostsToAuthor(authorIdSelected) {
     setLoading(true);
-    setAuthor(authorIdSelected);    
+    setAuthor(authorIdSelected);
     try {
       const response = await api.get('/5be5e3fa2f000082000fc3f8');
       if (authorIdSelected) {
@@ -77,13 +77,13 @@ export default function PostList() {
     setLoading(false);
   }
 
-  async function filterPostsToDate(order) {  
-    setLoading(true);      
+  async function filterPostsToDate(order) {
+    setLoading(true);
     setOrder(order);
     try {
       const response = await api.get('/5be5e3fa2f000082000fc3f8');
       if (order) {
-        if (order === 'asc') setPosts(response.data.sort((a, b) => b.metadata.publishedAt - a.metadata.publishedAt));
+        if (order === 'desc') setPosts(response.data.sort((a, b) => b.metadata.publishedAt - a.metadata.publishedAt));
         else setPosts(response.data.sort((a, b) => a.metadata.publishedAt - b.metadata.publishedAt));
       } else setPosts(response.data);
     } catch (error) {
@@ -98,7 +98,7 @@ export default function PostList() {
         <div>
           <span>filter posts to date:</span>
           <select onChange={e => filterPostsToDate(e.target.value)} defaultValue={order}>
-            <option value="">Select an option</option>            
+            <option value="">Select an option</option>
             <option value="asc">Crescent</option>
             <option value="desc">Decrescent</option>
           </select>
@@ -111,14 +111,14 @@ export default function PostList() {
               <option key={author.id} value={author.id}>{author.name}</option>
             ))}
           </select>
-        </div>    
+        </div>
       </div>
       <div className="box-list-posts">
         { loading ? (
           <Loading />
-        ) : (              
-          <ul>      
-          { 
+        ) : (
+          <ul>
+          {
             posts.length ? (
               posts?.map(post => (
                 <li key={post.title}>
@@ -137,7 +137,7 @@ export default function PostList() {
               </li>
             )
           }
-          </ul>      
+          </ul>
         )}
       </div>
     </Container>
