@@ -96,7 +96,7 @@ export default function PostList() {
     <Container>
       <div className="box-filters">
         <div>
-          <span>filter posts to date:</span>
+          <span>filter posts by date:</span>
           <select onChange={e => filterPostsToDate(e.target.value)} defaultValue={order}>
             <option value="">Select an option</option>
             <option value="asc">Crescent</option>
@@ -104,7 +104,7 @@ export default function PostList() {
           </select>
         </div>
         <div>
-          <span>filter posts to author:</span>
+          <span>filter posts by author:</span>
           <select onChange={e => filterPostsToAuthor(e.target.value)} defaultValue={author}>
             <option value="">All authors</option>
             { authors?.map(author => (
